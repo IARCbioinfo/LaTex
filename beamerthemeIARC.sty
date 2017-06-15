@@ -1,0 +1,74 @@
+\ProvidesPackage{beamerthemeIARC}[15/06/2017 v1.0 beamer 'IARC' theme]
+     
+\mode<presentation>
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif}
+\usepackage{fontspec}
+\usefonttheme{default}
+\usecolortheme{IARC}
+\useinnertheme{circles}
+\useoutertheme[footline=authorinstitutetitle,subsection=true]{miniframes}
+\setbeamercolor{footline}{fg=IARCblue,bg=darkgray}
+
+\setbeamertemplate{headline}{
+\leavevmode%    ***quitter le mode vertical, important !***
+\begin{beamercolorbox}[wd=1\paperwidth,ht=5mm,dp=8ex,center]{title in head/foot}
+  \usebeamerfont{author in head/foot} 
+  \insertsectionnavigationhorizontal{\paperwidth}{}{}
+\end{beamercolorbox}
+\begin{beamercolorbox}[wd=1\paperwidth,ht=5mm,dp=8ex,left]{title in head/foot}
+  \usebeamerfont{author in head/foot} 
+  \hskip5pt {\Large \insertsubsection}
+\end{beamercolorbox}}
+
+\setbeamertemplate{footline}{
+\leavevmode%    ***quitter le mode vertical, important !***
+\begin{beamercolorbox}[wd=.29\paperwidth,ht=9mm,dp=0ex,center]{author in head/foot}
+  \usebeamerfont{author in head/foot} 
+  \vspace{-1mm}
+  \includegraphics[height=9mm]{IARC-Logo.png}
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.47\paperwidth,ht=4mm,dp=8ex,center]{title in head/foot}
+  \usebeamerfont{title in head/foot}
+  {\small \insertshorttitle}
+\end{beamercolorbox}
+\begin{beamercolorbox}[wd=.17\paperwidth,ht=4mm,dp=8ex,center]{author in head/foot}
+  \usebeamerfont{author in head/foot} 
+  {\tiny \insertshortauthor}
+\end{beamercolorbox}
+\begin{beamercolorbox}[wd=.05\paperwidth,ht=4mm,dp=8ex,right]{author in head/foot}
+  \usebeamerfont{title in head/foot} 
+  \scriptsize{\insertframenumber / \inserttotalframenumber}
+\end{beamercolorbox}
+}
+% \setmainfont[ % if issues with font, specify exact path to crimson text font
+%    Path           = /usr/share/texmf/fonts/opentype/public/crimson_text/,
+%    Extension      = .ttf,
+%    Ligatures      = TeX,
+%    BoldFont       = CrimsonText-Bold,
+%    ItalicFont     = CrimsonText-Italic,
+%    BoldItalicFont = CrimsonText-BoldItalic
+%]{CrimsonText}
+\setmainfont[BoldFont = CrimsonText Bold,ItalicFont = CrimsonText Italic, BoldItalicFont = CrimsonText BoldItalic]{CrimsonText}
+%\setmainfont{DejaVu Sans}
+    \setbeamerfont{title}{family=\bfseries\fontspec{CrimsonText}}
+    \setbeamerfont{author}{series=\bfseries\fontspec{Source Sans Pro},size=\small}
+    \setbeamerfont{date}{series=\fontspec{Source Sans Pro},size=\normalsize}
+    \setbeamerfont{example text}{series=\bfseries\fontspec{CrimsonText}}
+    \setbeamerfont{frametitle}{series=\bfseries\fontspec{CrimsonText},size=\large}
+    \setbeamerfont{framesubtitle}{series=\mdseries\fontspec{CrimsonText},size=\large}
+    \setbeamerfont{section}{family=\fontspec{Source Sans Pro},series=\bfseries\fontspec{Source Sans Pro},size=\normalsize}
+    \setbeamerfont{subsection}{series=\bfseries\fontspec{Source Sans Pro},size=\LARGE}
+    \setbeamerfont{section in head/foot}{series=\bfseries\fontspec{Source Sans Pro},size=\normalsize}
+    \setbeamerfont{subsection in head/foot}{family=\fontspec{Source Sans Pro},series=\bfseries\fontspec{Source Sans Pro},size=\LARGE}
+	\setbeamertemplate{itemize/enumerate body begin}{\footnotesize}
+	\setbeamertemplate{itemize/enumerate subbody begin}{\scriptsize}
+
+    \setbeamertemplate{navigation symbols}{}
+
+    \mode<all>
+
+\setbeamertemplate{enumerate item}{%
+  \usebeamercolor[bg]{item projected}%
+  \raisebox{1.5pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+}
